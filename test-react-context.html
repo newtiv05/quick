@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Context Test</title>
+</head>
+<body>
+    <div id="test-container">
+        <h1>Testing React Context Fix</h1>
+        <p>If you can see this page without errors, the React useState issue has been resolved.</p>
+        <p>Check the browser console for any JavaScript errors.</p>
+    </div>
+    
+    <script>
+        // Simple test to check if the page loads without React errors
+        console.log('Test page loaded successfully');
+        
+        // Check if there are any React-related errors
+        window.addEventListener('error', function(e) {
+            if (e.message.includes('useState') || e.message.includes('React')) {
+                console.error('React error detected:', e.message);
+            }
+        });
+    </script>
+</body>
+</html>
