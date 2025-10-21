@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Connection</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button { padding: 10px 20px; margin: 5px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Test de Connectivité - AllAdsMarket</h1>
+    
+    <div class="info">
+        <h3>📡 Test de Connexion au Serveur</h3>
+        <p>Ce script teste la connectivité avec le serveur de développement.</p>
+    </div>
+    
+    <div id="status"></div>
+    
+    <button onclick="testConnection()">🧪 Tester la Connexion</button>
+    <button onclick="openApp()">🚀 Ouvrir l'Application</button>
+    <button onclick="testTranslations()">🌍 Tester les Traductions</button>
+    
+    <div id="results"></div>
+    
+    <script>
+        function testConnection() {
+            const statusDiv = document.getElementById('status');
+            const resultsDiv = document.getElementById('results');
+            
+            statusDiv.innerHTML = '<div class="info">🔄 Test en cours...</div>';
+            resultsDiv.innerHTML = '';
+            
+            // Test multiple ports
+            const ports = [3000, 3001, 3002, 3003];
+            let workingPorts = [];
+            
+            ports.forEach(port => {
+                fetch(`http://localhost:${port}/`)
+                    .then(response => {
+                        if (response.ok) {
+                            workingPorts.push(port);
+                            resultsDiv.innerHTML += `<div class="success">✅ Port ${port}: Serveur accessible</div>`;
+                        }
+                    })
+                    .catch(error => {
+                        resultsDiv.innerHTML += `<div class="error">❌ Port ${port}: ${error.message}</div>`;
+                    });
+            });
+            
+            setTimeout(() => {
+                if (workingPorts.length > 0) {
+                    statusDiv.innerHTML = `<div class="success">🎉 Serveur accessible sur le(s) port(s): ${workingPorts.join(', ')}</div>`;
+                } else {
+                    statusDiv.innerHTML = '<div class="error">❌ Aucun serveur accessible</div>';
+                }
+            }, 3000);
+        }
+        
+        function openApp() {
+            const ports = [3000, 3001, 3002, 3003];
+            let opened = false;
+            
+            ports.forEach(port => {
+                if (!opened) {
+                    window.open(`http://localhost:${port}/`, '_blank');
+                    opened = true;
+                }
+            });
+        }
+        
+        function testTranslations() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML += '<div class="info">🌍 Test des traductions...</div>';
+            
+            // Test if we can access the app and check for translation logs
+            fetch('http://localhost:3000/')
+                .then(response => response.text())
+                .then(html => {
+                    if (html.includes('AllAdsMarket') || html.includes('ProductCard')) {
+                        resultsDiv.innerHTML += '<div class="success">✅ Application chargée - Vérifiez la console pour les logs de traduction</div>';
+                    } else {
+                        resultsDiv.innerHTML += '<div class="error">❌ Application non trouvée</div>';
+                    }
+                })
+                .catch(error => {
+                    resultsDiv.innerHTML += `<div class="error">❌ Erreur: ${error.message}</div>`;
+                });
+        }
+        
+        // Auto-test on load
+        window.onload = function() {
+            setTimeout(testConnection, 1000);
+        };
+    </script>
+</body>
+</html>
+
