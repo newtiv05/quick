@@ -1033,7 +1033,9 @@ export const getSampleProducts = () => {
       originalPrice: 0,
       category: 'fashion',
       images: [
-        { url: 'https://m.media-amazon.com/images/I/21rIqHaTzeL._AC_SR38,50_.jpg', alt: 'Versace Round Sunglasses', isPrimary: true }
+        { url: 'https://m.media-amazon.com/images/I/21rIqHaTzeL._AC_SL1500_.jpg', alt: 'Versace Round Sunglasses', isPrimary: true },
+        { url: 'https://m.media-amazon.com/images/I/21rIqHaTzeL._AC_SL1500_.jpg', alt: 'Versace Round Sunglasses Detail View', isPrimary: false },
+        { url: 'https://m.media-amazon.com/images/I/21rIqHaTzeL._AC_SL1500_.jpg', alt: 'Versace Round Sunglasses Side View', isPrimary: false }
       ],
       rating: { average: 4.9, count: 354 },
       isFeatured: true,
