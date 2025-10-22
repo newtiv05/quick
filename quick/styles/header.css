@@ -1445,6 +1445,17 @@
   transform: none;
 }
 
+/* Masquer les suggestions sur mobile */
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
 /* Responsive Design pour Search Overlay */
 @media (max-width: 768px) {
   .search-overlay {

@@ -325,9 +325,9 @@ const Header = () => {
                   )}
                 </div>
                 
-                {/* Suggestions dynamiques basées sur la recherche */}
+                {/* Suggestions dynamiques basées sur la recherche - Desktop seulement */}
                 {searchQuery && (
-                  <div className="search-dynamic-suggestions">
+                  <div className="search-dynamic-suggestions desktop-only">
                     <h4>Suggestions pour "{searchQuery}"</h4>
                     <div className="suggestion-chips">
                       <button 
@@ -362,8 +362,8 @@ const Header = () => {
                   </div>
                 )}
                 
-                {/* Catégories populaires */}
-                <div className="search-overlay-suggestions">
+                {/* Catégories populaires - Desktop seulement */}
+                <div className="search-overlay-suggestions desktop-only">
                   <h3>Catégories Populaires</h3>
                   <div className="search-suggestions-grid">
                     <button 
@@ -494,8 +494,8 @@ const Header = () => {
                   </div>
                 </div>
                 
-                {/* Recherches populaires */}
-                <div className="search-trending">
+                {/* Recherches populaires - Desktop seulement */}
+                <div className="search-trending desktop-only">
                   <h3>Recherches Populaires</h3>
                   <div className="trending-searches">
                     <button 
