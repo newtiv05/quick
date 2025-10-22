@@ -292,7 +292,7 @@ const Header = () => {
             <div className="search-overlay-content" onClick={(e) => e.stopPropagation()}>
               <div className="search-overlay-header">
                 <div className="search-header-content">
-                  <h2>🔍 Recherche de Produits</h2>
+                  <h2>Recherche de Produits</h2>
                   <p className="search-overlay-cta">Découvrez des milliers de produits avec notre moteur de recherche intelligent</p>
                 </div>
                 <button 
@@ -328,7 +328,7 @@ const Header = () => {
                 {/* Suggestions dynamiques basées sur la recherche */}
                 {searchQuery && (
                   <div className="search-dynamic-suggestions">
-                    <h4>💡 Suggestions pour "{searchQuery}"</h4>
+                    <h4>Suggestions pour "{searchQuery}"</h4>
                     <div className="suggestion-chips">
                       <button 
                         type="button"
@@ -364,14 +364,19 @@ const Header = () => {
                 
                 {/* Catégories populaires */}
                 <div className="search-overlay-suggestions">
-                  <h3>🏷️ Catégories Populaires</h3>
+                  <h3>Catégories Populaires</h3>
                   <div className="search-suggestions-grid">
                     <button 
                       type="button"
                       onClick={() => setSearchQuery('smartphone')}
                       className="search-suggestion-card electronics"
                     >
-                      <div className="suggestion-icon">📱</div>
+                      <div className="suggestion-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M17 2H7C5.9 2 5 2.9 5 4V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V4C19 2.9 18.1 2 17 2ZM17 20H7V4H17V20Z"/>
+                          <path d="M12 18C12.55 18 13 17.55 13 17C13 16.45 12.55 16 12 16C11.45 16 11 16.45 11 17C11 17.55 11.45 18 12 18Z"/>
+                        </svg>
+                      </div>
                       <div className="suggestion-content">
                         <span className="suggestion-title">Smartphones</span>
                         <span className="suggestion-count">2,847 produits</span>
@@ -382,7 +387,12 @@ const Header = () => {
                       onClick={() => setSearchQuery('laptop')}
                       className="search-suggestion-card electronics"
                     >
-                      <div className="suggestion-icon">💻</div>
+                      <div className="suggestion-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M4 6H20V4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20V18H4V6ZM20 18H4V6H20V18Z"/>
+                          <path d="M22 20H2V22H22V20Z"/>
+                        </svg>
+                      </div>
                       <div className="suggestion-content">
                         <span className="suggestion-title">Ordinateurs</span>
                         <span className="suggestion-count">1,234 produits</span>
@@ -393,7 +403,11 @@ const Header = () => {
                       onClick={() => setSearchQuery('mode femme')}
                       className="search-suggestion-card fashion"
                     >
-                      <div className="suggestion-icon">👗</div>
+                      <div className="suggestion-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H9L3 7V9H5V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V9H21ZM17 20H7V9H17V20Z"/>
+                        </svg>
+                      </div>
                       <div className="suggestion-content">
                         <span className="suggestion-title">Mode Femme</span>
                         <span className="suggestion-count">3,456 produits</span>
@@ -404,7 +418,11 @@ const Header = () => {
                       onClick={() => setSearchQuery('chaussures')}
                       className="search-suggestion-card fashion"
                     >
-                      <div className="suggestion-icon">👟</div>
+                      <div className="suggestion-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M19 7H16V6C16 4.9 15.1 4 14 4H10C8.9 4 8 4.9 8 6V7H5C3.9 7 3 7.9 3 9V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V9C21 7.9 20.1 7 19 7ZM10 6H14V7H10V6ZM19 19H5V9H19V19Z"/>
+                        </svg>
+                      </div>
                       <div className="suggestion-content">
                         <span className="suggestion-title">Chaussures</span>
                         <span className="suggestion-count">1,789 produits</span>
@@ -415,7 +433,11 @@ const Header = () => {
                       onClick={() => setSearchQuery('maison décoration')}
                       className="search-suggestion-card home"
                     >
-                      <div className="suggestion-icon">🏠</div>
+                      <div className="suggestion-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z"/>
+                        </svg>
+                      </div>
                       <div className="suggestion-content">
                         <span className="suggestion-title">Maison & Déco</span>
                         <span className="suggestion-count">2,123 produits</span>
@@ -426,7 +448,12 @@ const Header = () => {
                       onClick={() => setSearchQuery('sport fitness')}
                       className="search-suggestion-card sports"
                     >
-                      <div className="suggestion-icon">⚽</div>
+                      <div className="suggestion-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20Z"/>
+                          <path d="M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12S9.79 8 12 8 16 9.79 16 12 14.21 16 12 16Z"/>
+                        </svg>
+                      </div>
                       <div className="suggestion-content">
                         <span className="suggestion-title">Sport & Fitness</span>
                         <span className="suggestion-count">987 produits</span>
@@ -437,7 +464,12 @@ const Header = () => {
                       onClick={() => setSearchQuery('beauté soins')}
                       className="search-suggestion-card beauty"
                     >
-                      <div className="suggestion-icon">💄</div>
+                      <div className="suggestion-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20Z"/>
+                          <path d="M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12S9.79 8 12 8 16 9.79 16 12 14.21 16 12 16Z"/>
+                        </svg>
+                      </div>
                       <div className="suggestion-content">
                         <span className="suggestion-title">Beauté & Soins</span>
                         <span className="suggestion-count">1,567 produits</span>
@@ -448,7 +480,12 @@ const Header = () => {
                       onClick={() => setSearchQuery('livres')}
                       className="search-suggestion-card books"
                     >
-                      <div className="suggestion-icon">📚</div>
+                      <div className="suggestion-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z"/>
+                          <path d="M14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z"/>
+                        </svg>
+                      </div>
                       <div className="suggestion-content">
                         <span className="suggestion-title">Livres</span>
                         <span className="suggestion-count">3,210 produits</span>
@@ -459,7 +496,7 @@ const Header = () => {
                 
                 {/* Recherches populaires */}
                 <div className="search-trending">
-                  <h3>🔥 Recherches Populaires</h3>
+                  <h3>Recherches Populaires</h3>
                   <div className="trending-searches">
                     <button 
                       type="button"
@@ -468,7 +505,7 @@ const Header = () => {
                     >
                       <span className="trending-rank">1</span>
                       <span className="trending-text">iPhone 15</span>
-                      <span className="trending-trend">↗️</span>
+                      <span className="trending-trend">↗</span>
                     </button>
                     <button 
                       type="button"
@@ -477,7 +514,7 @@ const Header = () => {
                     >
                       <span className="trending-rank">2</span>
                       <span className="trending-text">Nike Air Max</span>
-                      <span className="trending-trend">↗️</span>
+                      <span className="trending-trend">↗</span>
                     </button>
                     <button 
                       type="button"
@@ -486,7 +523,7 @@ const Header = () => {
                     >
                       <span className="trending-rank">3</span>
                       <span className="trending-text">MacBook Pro</span>
-                      <span className="trending-trend">↗️</span>
+                      <span className="trending-trend">↗</span>
                     </button>
                     <button 
                       type="button"
@@ -495,7 +532,7 @@ const Header = () => {
                     >
                       <span className="trending-rank">4</span>
                       <span className="trending-text">Samsung Galaxy</span>
-                      <span className="trending-trend">↗️</span>
+                      <span className="trending-trend">↗</span>
                     </button>
                     <button 
                       type="button"
@@ -504,7 +541,7 @@ const Header = () => {
                     >
                       <span className="trending-rank">5</span>
                       <span className="trending-text">Adidas</span>
-                      <span className="trending-trend">↗️</span>
+                      <span className="trending-trend">↗</span>
                     </button>
                   </div>
                 </div>
