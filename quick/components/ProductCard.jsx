@@ -119,6 +119,52 @@ const ProductCard = ({ product, onProductClick }) => {
     }
   };
 
+  const handleStarsClick = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (!product) return;
+    
+    // Capturer le clic sur les étoiles
+    const productImage = product.images?.find(img => img.isPrimary)?.url || product.images?.[0]?.url;
+    const affiliateUrl = product.affiliateUrl || product.affiliate_url || '#';
+    
+    // Debug: Afficher le lien d'affiliation utilisé
+    console.log('🔍 Stars Click - Product affiliate URL:', {
+      productId: product._id,
+      productName: product.name,
+      affiliateUrl: affiliateUrl,
+      affiliateUrl_source: product.affiliateUrl ? 'affiliateUrl' : (product.affiliate_url ? 'affiliate_url' : 'fallback')
+    });
+    
+    // Capturer le clic avec le service d'affiliation
+    const clickResult = affiliateService.captureClick(
+      product._id,
+      product.name || product.title,
+      affiliateUrl,
+      'stars',
+      'rating-stars',
+      productImage
+    );
+    
+    if (clickResult.success) {
+      console.log('✅ Stars click captured:', clickResult.message);
+    }
+    
+    // Rediriger vers le lien d'affiliation
+    if (affiliateUrl && affiliateUrl !== '#') {
+      const redirectSuccess = safeRedirect(affiliateUrl, true);
+      if (!redirectSuccess) {
+        console.warn('❌ Failed to redirect to affiliate URL:', affiliateUrl);
+        window.location.href = affiliateUrl;
+      } else {
+        console.log('✅ Successfully redirected to:', affiliateUrl);
+      }
+    } else {
+      console.warn('❌ No affiliate URL found for product:', product.name);
+    }
+  };
+
   const handleSeePriceClick = async (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -380,14 +426,14 @@ const ProductCard = ({ product, onProductClick }) => {
               )}
             </div>
 
-            <div className="product-rating-mobile">
+            <div className="product-rating-mobile" onClick={handleStarsClick} style={{ cursor: 'pointer' }}>
               <StarRating rating={rating} size={14} showText={false} />
               <span className="rating-text-mobile">
                 {rating.toFixed(1)}
               </span>
             </div>
 
-            <div className="product-rating-desktop">
+            <div className="product-rating-desktop" onClick={handleStarsClick} style={{ cursor: 'pointer' }}>
               <StarRating rating={rating} size={16} showText={false} />
               <span className="rating-text">
                 {rating.toFixed(1)} ({formatReviewCount(ratingCount, i18n.language)})

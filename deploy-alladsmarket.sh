@@ -39,3 +39,4 @@ tar -czf alladsmarket-deployment.tar.gz dist/
 
 echo "🎉 Deployment package ready: alladsmarket-deployment.tar.gz"
 echo "🌐 Upload to alladsmarket.com server to complete deployment"
+

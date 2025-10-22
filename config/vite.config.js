@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Optimized Vite configuration for alladsmarket.com
+// Optimized Vite configuration for production
 export default defineConfig({
   plugins: [
     react({
-      // Enable React Fast Refresh for development
-      fastRefresh: true,
+      // Disable React Fast Refresh for stability
+      fastRefresh: false,
       // Optimize JSX runtime
       jsxRuntime: 'automatic'
     })
@@ -15,28 +15,7 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
-    open: true,
-    // CORS configuration for alladsmarket.com
-    cors: {
-      origin: ['https://alladsmarket.com', 'https://www.alladsmarket.com', 'http://localhost:3000', 'http://localhost:3001'],
-      credentials: true
-    },
-    // Proxy configuration for API calls
-    proxy: {
-      '/api': {
-        target: 'https://alladsmarket.com',
-        changeOrigin: true,
-        secure: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    },
-    // Security headers for alladsmarket.com
-    headers: {
-      'X-Frame-Options': 'DENY',
-      'X-Content-Type-Options': 'nosniff',
-      'Referrer-Policy': 'strict-origin-when-cross-origin',
-      'Permissions-Policy': 'camera=(), microphone=(), geolocation=()'
-    }
+    open: true
   },
 
   // Production build optimization
@@ -89,17 +68,7 @@ export default defineConfig({
             return `assets/fonts/[name]-[hash].${ext}`;
           }
           return `assets/[ext]/[name]-[hash].${ext}`;
-        },
-        
-        // Add security headers and branding
-        banner: `
-          // AllAdsMarket.com - Secure E-commerce Platform
-          // Generated: ${new Date().toISOString()}
-          // Domain: alladsmarket.com
-        `,
-        footer: `
-          // AllAdsMarket.com - End of Bundle
-        `
+        }
       }
     }
   },
@@ -127,17 +96,11 @@ export default defineConfig({
   // Asset handling
   assetsInclude: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.webp', '**/*.avif'],
 
-  // Environment variables for alladsmarket.com
+  // Environment variables
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
     __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
-    __DOMAIN__: JSON.stringify('alladsmarket.com'),
-    __API_URL__: JSON.stringify('https://alladsmarket.com'),
-    __SITE_URL__: JSON.stringify('https://alladsmarket.com'),
-    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-    'process.env.VITE_DOMAIN': JSON.stringify('alladsmarket.com'),
-    'process.env.VITE_API_URL': JSON.stringify('https://alladsmarket.com'),
-    'process.env.VITE_SITE_URL': JSON.stringify('https://alladsmarket.com')
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
   },
 
   // ESBuild optimization
@@ -148,8 +111,8 @@ export default defineConfig({
     jsxDev: false
   },
 
-  // Base configuration for alladsmarket.com
-  base: '/',
+  // Base configuration
+  base: './',
 
   // Performance optimization
   resolve: {
@@ -171,10 +134,6 @@ export default defineConfig({
   preview: {
     port: 3000,
     host: true,
-    open: true,
-    cors: {
-      origin: ['https://alladsmarket.com', 'https://www.alladsmarket.com'],
-      credentials: true
-    }
+    open: true
   }
 })

@@ -1314,16 +1314,16 @@ body.profile-page .profile-container {
   }
   
   .categories-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: var(--spacing-3);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-2);
   }
   
   .category-card {
-    padding: var(--spacing-6);
+    padding: var(--spacing-4);
   }
   
   .category-icon {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
   }
   
   .intro-title {
@@ -1378,16 +1378,16 @@ body.profile-page .profile-container {
   }
   
   .categories-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: var(--spacing-2);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-1);
   }
   
   .category-card {
-    padding: var(--spacing-4);
+    padding: var(--spacing-3);
   }
   
   .category-icon {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl);
   }
   
   .intro-title {

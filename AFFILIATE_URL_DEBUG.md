@@ -151,3 +151,4 @@ console.log('Affiliate URLs:', {
 ---
 
 **AllAdsMarket.com** - Debug des liens d'affiliation pour identifier la source du problème ✅
+

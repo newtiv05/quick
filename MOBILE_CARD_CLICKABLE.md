@@ -145,3 +145,4 @@ const handleProductClick = async (clickSource = 'card') => {
 ---
 
 **AllAdsMarket.com** - Interface mobile ultra-simplifiée avec carte entièrement cliquable ✅
+

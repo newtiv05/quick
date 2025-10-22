@@ -600,7 +600,7 @@
   
   .buy-button {
     padding: 6px 10px !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
     border-radius: 8px !important;
     min-height: 28px; /* Hauteur réduite pour mobile */
     flex: 1;
@@ -624,7 +624,7 @@
   }
   
   .buy-button {
-    font-size: 11px !important;
+    font-size: 12px !important;
     padding: 6px 10px !important;
   }
 }
@@ -646,7 +646,7 @@
   }
   
   .buy-button {
-    font-size: 13px !important;
+    font-size: 14px !important;
     padding: 10px 14px !important;
   }
 }
@@ -663,7 +663,7 @@
   padding: 4px 8px !important;
   border-radius: 8px !important;
   font-weight: 900 !important;
-  font-size: 10px !important;
+  font-size: 12px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
