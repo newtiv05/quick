@@ -290,7 +290,7 @@ const Header = () => {
         {isSearchOpen && (
           <div className="search-overlay" onClick={closeSearch}>
             <div className="search-overlay-content" onClick={(e) => e.stopPropagation()}>
-              <div className="search-overlay-header">
+              <div className="search-overlay-header desktop-only">
                 <div className="search-header-content">
                   <h2>Recherche de Produits</h2>
                   <p className="search-overlay-cta">Découvrez des milliers de produits avec notre moteur de recherche intelligent</p>
@@ -302,6 +302,14 @@ const Header = () => {
                   <X size={24} />
                 </button>
               </div>
+              
+              {/* Bouton de fermeture mobile */}
+              <button 
+                onClick={closeSearch}
+                className="search-overlay-close mobile-only"
+              >
+                <X size={24} />
+              </button>
               
               <form onSubmit={handleSearch} className="search-overlay-form">
                 <div className="search-overlay-input-container">

@@ -1450,9 +1450,38 @@
   display: block;
 }
 
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .desktop-only {
     display: none !important;
+  }
+  
+  .mobile-only {
+    display: block;
+  }
+  
+  /* Bouton de fermeture mobile */
+  .search-overlay-close.mobile-only {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+  
+  .search-overlay-close.mobile-only:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
   }
 }
 
