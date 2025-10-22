@@ -1554,12 +1554,14 @@
   border-radius: var(--radius-md);
   font-size: 1rem;
   transition: border-color var(--transition-fast);
+  color: #000000 !important;
 }
 
 .input-container input:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+  color: #000000 !important;
 }
 
 .password-toggle {
