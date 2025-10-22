@@ -1208,15 +1208,15 @@
 .search-dynamic-suggestions {
   margin-bottom: 32px;
   padding: 24px;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   border-radius: 16px;
-  border: 1px solid #bae6fd;
+  border: 1px solid #475569;
 }
 
 .search-dynamic-suggestions h4 {
   font-size: 16px;
   font-weight: 700;
-  color: #0369a1;
+  color: #ffffff;
   margin-bottom: 16px;
 }
 
@@ -1227,9 +1227,9 @@
 }
 
 .suggestion-chip {
-  background: #ffffff;
+  background: #0ea5e9;
   border: 2px solid #0ea5e9;
-  color: #0369a1;
+  color: #ffffff;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
@@ -1240,7 +1240,7 @@
 }
 
 .suggestion-chip:hover {
-  background: #0ea5e9;
+  background: #0284c7;
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
@@ -1254,7 +1254,7 @@
 .search-overlay-suggestions h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #1e293b;
+  color: #ffffff;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -1272,13 +1272,13 @@
   align-items: center;
   gap: 16px;
   padding: 20px;
-  background: #ffffff;
-  border: 2px solid #e2e8f0;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 2px solid #475569;
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: left;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .search-suggestion-card:hover {
@@ -1324,7 +1324,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #475569 0%, #64748b 100%);
   border-radius: 12px;
   flex-shrink: 0;
 }
@@ -1337,14 +1337,14 @@
   display: block;
   font-size: 16px;
   font-weight: 700;
-  color: #1e293b;
+  color: #ffffff;
   margin-bottom: 4px;
 }
 
 .suggestion-count {
   display: block;
   font-size: 14px;
-  color: #64748b;
+  color: #ffffff;
   font-weight: 500;
 }
 
@@ -1356,7 +1356,7 @@
 .search-trending h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #1e293b;
+  color: #ffffff;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -1374,13 +1374,13 @@
   align-items: center;
   gap: 16px;
   padding: 16px 20px;
-  background: #ffffff;
-  border: 2px solid #e2e8f0;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 2px solid #475569;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: left;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .trending-search:hover {
@@ -1407,7 +1407,7 @@
   flex: 1;
   font-size: 16px;
   font-weight: 600;
-  color: #1e293b;
+  color: #ffffff;
 }
 
 .trending-trend {
