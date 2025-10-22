@@ -548,7 +548,7 @@ const Header = () => {
                 
                 <button
                   type="submit"
-                  className="search-overlay-submit"
+                  className="search-overlay-submit desktop-only"
                   disabled={!searchQuery.trim()}
                 >
                   <Search size={20} />
