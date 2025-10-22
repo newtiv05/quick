@@ -405,9 +405,9 @@
 
 .products-container {
   display: grid !important;
-  grid-template-columns: repeat(6, 1fr) !important; /* 6 colonnes fixes - MODIFICATION VISIBLE */
-  gap: 4px !important; /* GAP DE 4PX - MODIFICATION VISIBLE */
-  padding: 3px;
+  grid-template-columns: repeat(5, 1fr) !important; /* 5 colonnes sur ordinateur */
+  gap: 8px !important; /* GAP DE 8PX pour meilleur espacement */
+  padding: 8px;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -416,37 +416,37 @@
 /* Règle spécifique pour ProductList */
 .product-list-container .products-container {
   display: grid !important;
-  grid-template-columns: repeat(6, 1fr) !important; /* 6 colonnes fixes - MODIFICATION VISIBLE */
-  gap: 4px !important; /* GAP DE 4PX - MODIFICATION VISIBLE */
+  grid-template-columns: repeat(5, 1fr) !important; /* 5 colonnes sur ordinateur */
+  gap: 8px !important; /* GAP DE 8PX pour meilleur espacement */
 }
 
 .products-showcase {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 colonnes fixes - MODIFICATION VISIBLE */
-  gap: 4px; /* GAP DE 4PX - MODIFICATION VISIBLE */
-  padding: 3px;
+  grid-template-columns: repeat(5, 1fr); /* 5 colonnes sur ordinateur */
+  gap: 8px; /* GAP DE 8PX pour meilleur espacement */
+  padding: 8px;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* Mobile responsive - 6 columns fixes */
+/* Mobile responsive - 2 colonnes sur mobile */
 @media (max-width: 480px) {
   .products-container {
-    grid-template-columns: repeat(6, 1fr) !important; /* 6 colonnes sur mobile - MODIFICATION VISIBLE */
-    gap: 4px !important; /* GAP DE 4PX - MODIFICATION VISIBLE */
-    padding: 2px;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 colonnes sur mobile */
+    gap: 12px !important; /* GAP DE 12PX pour meilleur espacement mobile */
+    padding: 8px;
   }
   
   .product-list-container .products-container {
-    grid-template-columns: repeat(6, 1fr) !important; /* 6 colonnes sur mobile - MODIFICATION VISIBLE */
-    gap: 4px !important; /* GAP DE 4PX - MODIFICATION VISIBLE */
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 colonnes sur mobile */
+    gap: 12px !important; /* GAP DE 12PX pour meilleur espacement mobile */
   }
   
   .products-showcase {
-    grid-template-columns: repeat(6, 1fr); /* 6 colonnes sur mobile - MODIFICATION VISIBLE */
-    gap: 4px; /* GAP DE 4PX - MODIFICATION VISIBLE */
-    padding: 2px;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    gap: 12px; /* GAP DE 12PX pour meilleur espacement mobile */
+    padding: 8px;
   }
 }
 
@@ -540,20 +540,20 @@
   }
   
   .products-container {
-    grid-template-columns: repeat(6, 1fr) !important; /* 6 colonnes fixes - MODIFICATION VISIBLE */
-    gap: 4px !important; /* GAP DE 4PX - MODIFICATION VISIBLE */
-    padding: 2px;
+    grid-template-columns: repeat(3, 1fr) !important; /* 3 colonnes sur tablette */
+    gap: 10px !important; /* GAP DE 10PX pour meilleur espacement */
+    padding: 8px;
   }
   
   .product-list-container .products-container {
-    grid-template-columns: repeat(6, 1fr) !important; /* 6 colonnes fixes - MODIFICATION VISIBLE */
-    gap: 4px !important; /* GAP DE 4PX - MODIFICATION VISIBLE */
+    grid-template-columns: repeat(3, 1fr) !important; /* 3 colonnes sur tablette */
+    gap: 10px !important; /* GAP DE 10PX pour meilleur espacement */
   }
   
   .products-showcase {
-    grid-template-columns: repeat(6, 1fr); /* 6 colonnes fixes - MODIFICATION VISIBLE */
-    gap: 4px; /* GAP DE 4PX - MODIFICATION VISIBLE */
-    padding: 2px;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur tablette */
+    gap: 10px; /* GAP DE 10PX pour meilleur espacement */
+    padding: 8px;
   }
 }
 
@@ -567,19 +567,19 @@
   }
   
   .products-container {
-    grid-template-columns: repeat(6, 1fr) !important; /* 6 colonnes fixes - MODIFICATION VISIBLE */
-    gap: 4px !important; /* GAP DE 4PX - MODIFICATION VISIBLE */
-    padding: 2px;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 colonnes sur mobile */
+    gap: 12px !important; /* GAP DE 12PX pour meilleur espacement mobile */
+    padding: 8px;
   }
   
   .product-list-container .products-container {
-    grid-template-columns: repeat(6, 1fr) !important; /* 6 colonnes fixes - MODIFICATION VISIBLE */
-    gap: 4px !important; /* GAP DE 4PX - MODIFICATION VISIBLE */
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 colonnes sur mobile */
+    gap: 12px !important; /* GAP DE 12PX pour meilleur espacement mobile */
   }
   
   .products-showcase {
-    grid-template-columns: repeat(6, 1fr); /* 6 colonnes fixes - MODIFICATION VISIBLE */
-    gap: 4px; /* GAP DE 4PX - MODIFICATION VISIBLE */
-    padding: 2px;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    gap: 12px; /* GAP DE 12PX pour meilleur espacement mobile */
+    padding: 8px;
   }
 }

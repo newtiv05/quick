@@ -59,14 +59,16 @@
     display: none; /* Hide on very small screens */
   }
   
-  /* Product cards */
+  /* Product cards - Mobile Optimized */
   .product-card {
     margin-bottom: var(--spacing-md);
+    min-height: 180px; /* Ensure minimum height for visibility */
   }
   
   .products-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    gap: 12px; /* Increased gap for better separation */
+    padding: 0 8px; /* Added horizontal padding */
   }
   
   /* Typography adjustments */
@@ -106,8 +108,13 @@
   }
   
   .products-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
+    grid-template-columns: repeat(3, 1fr); /* Changed from 4 to 3 for better mobile visibility */
+    gap: 8px; /* Increased gap */
+    padding: 0 8px; /* Added horizontal padding */
+  }
+  
+  .product-card {
+    min-height: 200px; /* Increased height for better visibility */
   }
   
   .desktop-nav {

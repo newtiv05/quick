@@ -33,6 +33,7 @@ import {
     } from './pages';
 import './App.css';
 import './styles/index.css';
+import './styles/mobile-products.css';
 
 // Inner App component
 const AppContent = () => {

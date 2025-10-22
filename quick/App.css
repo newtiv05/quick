@@ -811,6 +811,13 @@ body.profile-page .profile-container {
   overflow: hidden;
 }
 
+/* Mobile specific - Override for minimal spacing */
+@media (max-width: 768px) {
+  .product-name {
+    margin-bottom: 0px !important; /* Supprimé complètement la marge sur mobile */
+  }
+}
+
 .product-description {
   color: var(--text-secondary);
   font-size: 0.875rem;

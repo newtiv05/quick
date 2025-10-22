@@ -2109,6 +2109,30 @@ export const getSampleProducts = () => {
       inStock: true,
       tags: ['electronics', 'accessories', 'macbook-air', 'privacy-screen', 'magnetic', 'anti-peeping', 'anti-blue-light', 'anti-glare', '13.6-inch', 'm2', 'm3', 'm4', 'removable', '360-degree'],
       affiliateUrl: 'https://amzn.to/43bR5lJ'
+    },
+
+    // Product - BOSTANTEN Women's Leather Designer Handbags
+    {
+      _id: 'product-bostanten-handbag',
+      productNumber: 50,
+      name: 'BOSTANTEN Women\'s Leather Designer Handbags Tote Purses Shoulder Bucket Bags',
+      description: 'Elegant leather designer handbag with tote and shoulder options. Perfect for professional and casual occasions.',
+      price: 0,
+      originalPrice: 0,
+      category: 'fashion',
+      images: [
+        { url: 'https://m.media-amazon.com/images/I/71HRnouDK-L._AC_SX679_.jpg', alt: 'BOSTANTEN Handbag 1', isPrimary: true },
+        { url: 'https://m.media-amazon.com/images/I/615dwrZehiL._AC_SX679_.jpg', alt: 'BOSTANTEN Handbag 2', isPrimary: false },
+        { url: 'https://m.media-amazon.com/images/I/71zM-TKfMaL._AC_SX679_.jpg', alt: 'BOSTANTEN Handbag 3', isPrimary: false },
+        { url: 'https://m.media-amazon.com/images/I/61Y0UrLwWQL._AC_SX679_.jpg', alt: 'BOSTANTEN Handbag 4', isPrimary: false }
+      ],
+      rating: { average: 4.6, count: 8700 },
+      isFeatured: true,
+      isTrending: true,
+      brand: 'BOSTANTEN',
+      inStock: true,
+      tags: ['fashion', 'handbag', 'leather', 'designer', 'tote', 'shoulder', 'women', 'purse', 'bucket-bag', 'professional', 'casual'],
+      affiliateUrl: 'https://amzn.to/3WVw9LT'
     }
   ];
   

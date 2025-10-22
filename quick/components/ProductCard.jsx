@@ -81,23 +81,42 @@ const ProductCard = ({ product, onProductClick }) => {
       console.log('✅ Product click captured:', clickResult.message);
     }
     
-    // Open quick view modal when any part of the card is clicked
-    openModal('quickView', product);
+    // Check if mobile device
+    const isMobile = window.innerWidth <= 768;
     
-    // Use setTimeout to prevent blocking the UI
-    setTimeout(async () => {
-      try {
-        // Track the quick view in analytics
-        await analyticsAPI.trackEvent('quick_view', { 
-          productId: product._id,
-          affiliateId: clickResult.affiliateInfo?.affiliateId 
-        }, product._id);
-        
-      } catch (error) {
-        // Error tracking quick view
-        console.error('Quick view error:', error);
+    if (isMobile) {
+      // On mobile, redirect directly to affiliate link
+      if (affiliateUrl && affiliateUrl !== '#') {
+        const redirectSuccess = safeRedirect(affiliateUrl, true);
+        if (!redirectSuccess) {
+          console.warn('❌ Failed to redirect to affiliate URL:', affiliateUrl);
+          window.location.href = affiliateUrl;
+        } else {
+          console.log('✅ Successfully redirected to:', affiliateUrl);
+        }
+      } else {
+        console.warn('❌ No affiliate URL found for product:', product.name);
+        window.location.href = '/';
       }
-    }, 0);
+    } else {
+      // On desktop, open modal
+      openModal('quickView', product);
+      
+      // Use setTimeout to prevent blocking the UI
+      setTimeout(async () => {
+        try {
+          // Track the quick view in analytics
+          await analyticsAPI.trackEvent('quick_view', { 
+            productId: product._id,
+            affiliateId: clickResult.affiliateInfo?.affiliateId 
+          }, product._id);
+          
+        } catch (error) {
+          // Error tracking quick view
+          console.error('Quick view error:', error);
+        }
+      }, 0);
+    }
   };
 
   const handleSeePriceClick = async (e) => {
@@ -108,6 +127,14 @@ const ProductCard = ({ product, onProductClick }) => {
     
     const affiliateUrl = product.affiliateUrl || product.affiliate_url || '#';
     const productImage = product.images?.find(img => img.isPrimary)?.url || product.images?.[0]?.url;
+    
+    // Debug: Afficher le lien d'affiliation utilisé
+    console.log('🔍 See Price - Product affiliate URL:', {
+      productId: product._id,
+      productName: product.name,
+      affiliateUrl: affiliateUrl,
+      affiliateUrl_source: product.affiliateUrl ? 'affiliateUrl' : (product.affiliate_url ? 'affiliate_url' : 'fallback')
+    });
     
     // Capturer le clic sur le bouton "Voir prix"
     const clickResult = affiliateService.captureClick(
@@ -191,6 +218,14 @@ const ProductCard = ({ product, onProductClick }) => {
     const productImage = product.images?.find(img => img.isPrimary)?.url || product.images?.[0]?.url;
     const affiliateUrl = product.affiliateUrl || product.affiliate_url || '#';
     
+    // Debug: Afficher le lien d'affiliation utilisé
+    console.log('🔍 Quick View - Product affiliate URL:', {
+      productId: product._id,
+      productName: product.name,
+      affiliateUrl: affiliateUrl,
+      affiliateUrl_source: product.affiliateUrl ? 'affiliateUrl' : (product.affiliate_url ? 'affiliate_url' : 'fallback')
+    });
+    
     const clickResult = affiliateService.captureClick(
       product._id,
       product.name || product.title,
@@ -204,23 +239,42 @@ const ProductCard = ({ product, onProductClick }) => {
       console.log('✅ Quick View button click captured:', clickResult.message);
     }
     
-    // Ouvrir le modal immédiatement
-    openModal('quickView', product);
+    // Check if mobile device
+    const isMobile = window.innerWidth <= 768;
     
-    // Use setTimeout to prevent blocking the UI
-    setTimeout(async () => {
-      try {
-        // Track the quick view in analytics
-        await analyticsAPI.trackEvent('quick_view', { 
-          productId: product._id,
-          affiliateId: clickResult.affiliateInfo?.affiliateId 
-        }, product._id);
-        
-      } catch (error) {
-        // Error tracking quick view
-        console.error('Quick view error:', error);
+    if (isMobile) {
+      // On mobile, redirect directly to affiliate link
+      if (affiliateUrl && affiliateUrl !== '#') {
+        const redirectSuccess = safeRedirect(affiliateUrl, true);
+        if (!redirectSuccess) {
+          console.warn('❌ Failed to redirect to affiliate URL:', affiliateUrl);
+          window.location.href = affiliateUrl;
+        } else {
+          console.log('✅ Successfully redirected to:', affiliateUrl);
+        }
+      } else {
+        console.warn('❌ No affiliate URL found for product:', product.name);
+        window.location.href = '/';
       }
-    }, 0);
+    } else {
+      // On desktop, open modal
+      openModal('quickView', product);
+      
+      // Use setTimeout to prevent blocking the UI
+      setTimeout(async () => {
+        try {
+          // Track the quick view in analytics
+          await analyticsAPI.trackEvent('quick_view', { 
+            productId: product._id,
+            affiliateId: clickResult.affiliateInfo?.affiliateId 
+          }, product._id);
+          
+        } catch (error) {
+          // Error tracking quick view
+          console.error('Quick view error:', error);
+        }
+      }, 0);
+    }
   };
 
   const formatPrice = (price) => {
@@ -265,7 +319,7 @@ const ProductCard = ({ product, onProductClick }) => {
   return (
     <div 
       className="product-card"
-      onClick={handleSeePriceClick}
+      onClick={handleProductClick}
     >
       <div className="product-image-container">
         {discount > 0 && (
@@ -326,7 +380,14 @@ const ProductCard = ({ product, onProductClick }) => {
               )}
             </div>
 
-            <div className="product-rating">
+            <div className="product-rating-mobile">
+              <StarRating rating={rating} size={14} showText={false} />
+              <span className="rating-text-mobile">
+                {rating.toFixed(1)}
+              </span>
+            </div>
+
+            <div className="product-rating-desktop">
               <StarRating rating={rating} size={16} showText={false} />
               <span className="rating-text">
                 {rating.toFixed(1)} ({formatReviewCount(ratingCount, i18n.language)})
@@ -352,18 +413,19 @@ const ProductCard = ({ product, onProductClick }) => {
         
         <div className="product-actions">
           <button
-            className="quick-view-button"
-            onClick={handleProductClick}
+            className="quick-view-button quick-view-desktop"
+            onClick={handleQuickViewClick}
             title={t('products.quickView')}
           >
-            <Eye size={14} />
+            <Eye size={16} />
+            <span className="quick-view-text">{t('products.quickView')}</span>
           </button>
           <button
-            className="buy-button"
+            className="buy-button buy-button-desktop"
             onClick={handleSeePriceClick}
           >
-            <ExternalLink size={14} />
-            {t('products.seePrice')}
+            <ExternalLink size={16} />
+            <span className="buy-button-text">{t('products.seePrice')}</span>
           </button>
         </div>
         
