@@ -811,8 +811,8 @@
 /* Mobile Navigation */
 .mobile-nav {
   display: none;
-  background: var(--bg-primary);
-  border-top: 1px solid var(--border-light);
+  background: #000000;
+  border-top: 1px solid #333333;
   box-shadow: var(--shadow-lg);
 }
 
@@ -853,26 +853,28 @@
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-4);
-  color: #ffffff;
+  color: #ffffff !important;
   text-decoration: none;
   font-weight: var(--font-weight-medium);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--spacing-2);
 }
 
 .mobile-nav-link:hover {
-  color: var(--primary-color);
-  background: var(--primary-50);
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.2);
   transform: translateX(4px);
 }
 
 .mobile-nav-link svg {
   flex-shrink: 0;
-  color: var(--text-muted);
+  color: #ffffff !important;
 }
 
 .mobile-nav-link:hover svg {
-  color: var(--primary-color);
+  color: #ffffff !important;
   transform: scale(1.1);
 }
 
@@ -1483,6 +1485,72 @@
     background: rgba(0, 0, 0, 0.7);
     transform: scale(1.1);
   }
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav {
+  display: none;
+  background: #000000;
+  border-top: 1px solid #333333;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.mobile-nav-content {
+  padding: 20px;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+}
+
+.mobile-nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.mobile-nav-link svg {
+  flex-shrink: 0;
+  color: #ffffff !important;
+}
+
+.mobile-nav-link:hover svg {
+  color: #ffffff !important;
+  transform: scale(1.1);
+}
+
+.mobile-nav-link.auth {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.mobile-nav-link.auth:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Responsive Design pour Search Overlay */
