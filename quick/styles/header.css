@@ -1489,7 +1489,7 @@
 
 /* Mobile Navigation Styles */
 .mobile-nav {
-  display: none;
+  display: block;
   background: #000000;
   border-top: 1px solid #333333;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -1555,6 +1555,10 @@
 
 /* Responsive Design pour Search Overlay */
 @media (max-width: 768px) {
+  .mobile-nav {
+    display: block !important;
+  }
+  
   .search-overlay {
     padding-top: 2vh;
   }
