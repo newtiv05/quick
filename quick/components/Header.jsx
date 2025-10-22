@@ -340,28 +340,40 @@ const Header = () => {
                     <div className="suggestion-chips">
                       <button 
                         type="button"
-                        onClick={() => setSearchQuery(`${searchQuery} pas cher`)}
+                        onClick={() => {
+                          setSearchQuery(`${searchQuery} pas cher`);
+                          handleSearch({ preventDefault: () => {} });
+                        }}
                         className="suggestion-chip"
                       >
                         {searchQuery} pas cher
                       </button>
                       <button 
                         type="button"
-                        onClick={() => setSearchQuery(`${searchQuery} avis`)}
+                        onClick={() => {
+                          setSearchQuery(`${searchQuery} avis`);
+                          handleSearch({ preventDefault: () => {} });
+                        }}
                         className="suggestion-chip"
                       >
                         {searchQuery} avis
                       </button>
                       <button 
                         type="button"
-                        onClick={() => setSearchQuery(`${searchQuery} comparatif`)}
+                        onClick={() => {
+                          setSearchQuery(`${searchQuery} comparatif`);
+                          handleSearch({ preventDefault: () => {} });
+                        }}
                         className="suggestion-chip"
                       >
                         {searchQuery} comparatif
                       </button>
                       <button 
                         type="button"
-                        onClick={() => setSearchQuery(`${searchQuery} meilleur prix`)}
+                        onClick={() => {
+                          setSearchQuery(`${searchQuery} meilleur prix`);
+                          handleSearch({ preventDefault: () => {} });
+                        }}
                         className="suggestion-chip"
                       >
                         {searchQuery} meilleur prix
@@ -376,7 +388,10 @@ const Header = () => {
                   <div className="search-suggestions-grid">
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('smartphone')}
+                      onClick={() => {
+                        setSearchQuery('smartphone');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="search-suggestion-card electronics"
                     >
                       <div className="suggestion-icon">
@@ -392,7 +407,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('laptop')}
+                      onClick={() => {
+                        setSearchQuery('laptop');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="search-suggestion-card electronics"
                     >
                       <div className="suggestion-icon">
@@ -408,7 +426,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('mode femme')}
+                      onClick={() => {
+                        setSearchQuery('mode femme');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="search-suggestion-card fashion"
                     >
                       <div className="suggestion-icon">
@@ -423,7 +444,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('chaussures')}
+                      onClick={() => {
+                        setSearchQuery('chaussures');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="search-suggestion-card fashion"
                     >
                       <div className="suggestion-icon">
@@ -438,7 +462,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('maison décoration')}
+                      onClick={() => {
+                        setSearchQuery('maison décoration');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="search-suggestion-card home"
                     >
                       <div className="suggestion-icon">
@@ -453,7 +480,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('sport fitness')}
+                      onClick={() => {
+                        setSearchQuery('sport fitness');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="search-suggestion-card sports"
                     >
                       <div className="suggestion-icon">
@@ -469,7 +499,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('beauté soins')}
+                      onClick={() => {
+                        setSearchQuery('beauté soins');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="search-suggestion-card beauty"
                     >
                       <div className="suggestion-icon">
@@ -485,7 +518,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('livres')}
+                      onClick={() => {
+                        setSearchQuery('livres');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="search-suggestion-card books"
                     >
                       <div className="suggestion-icon">
@@ -508,7 +544,10 @@ const Header = () => {
                   <div className="trending-searches">
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('iPhone 15')}
+                      onClick={() => {
+                        setSearchQuery('iPhone 15');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="trending-search"
                     >
                       <span className="trending-rank">1</span>
@@ -517,7 +556,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('Nike Air Max')}
+                      onClick={() => {
+                        setSearchQuery('Nike Air Max');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="trending-search"
                     >
                       <span className="trending-rank">2</span>
@@ -526,7 +568,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('MacBook Pro')}
+                      onClick={() => {
+                        setSearchQuery('MacBook Pro');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="trending-search"
                     >
                       <span className="trending-rank">3</span>
@@ -535,7 +580,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('Samsung Galaxy')}
+                      onClick={() => {
+                        setSearchQuery('Samsung Galaxy');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="trending-search"
                     >
                       <span className="trending-rank">4</span>
@@ -544,7 +592,10 @@ const Header = () => {
                     </button>
                     <button 
                       type="button"
-                      onClick={() => setSearchQuery('Adidas')}
+                      onClick={() => {
+                        setSearchQuery('Adidas');
+                        handleSearch({ preventDefault: () => {} });
+                      }}
                       className="trending-search"
                     >
                       <span className="trending-rank">5</span>
